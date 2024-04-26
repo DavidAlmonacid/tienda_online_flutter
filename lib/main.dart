@@ -4,7 +4,7 @@ import 'package:flutter_animated_button/flutter_animated_button.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,37 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    _animation = Tween<double>(begin: 1.0, end: 1.5).animate(_controller);
+
+    // Inicia la animación
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +62,18 @@ class MainScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Center(
-                child: Image.asset(
-                  'assets/images/logo.png',
-                  width: 120,
-                  height: 130.8,
+                child: AnimatedBuilder(
+                  animation: _animation,
+                  builder: (context, child) {
+                    return Transform.scale(
+                      scale: _animation.value,
+                      child: Image.asset(
+                        'assets/images/logo.png',
+                        width: 120,
+                        height: 130.8,
+                      ),
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 320),
@@ -105,7 +142,7 @@ class MainScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+  const SecondScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -114,14 +151,14 @@ class SecondScreen extends StatelessWidget {
         title: const Text("Second Screen"),
       ),
       body: const Center(
-        child: Text("Welcome to the second screen!"),
+        child: Text("¡Bienvenido a la segunda pantalla!"),
       ),
     );
   }
 }
 
 class ThirdScreen extends StatelessWidget {
-  const ThirdScreen({super.key});
+  const ThirdScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +167,7 @@ class ThirdScreen extends StatelessWidget {
         title: const Text("Third Screen"),
       ),
       body: const Center(
-        child: Text("Welcome to the third screen!"),
+        child: Text("¡Bienvenido a la tercera pantalla!"),
       ),
     );
   }
