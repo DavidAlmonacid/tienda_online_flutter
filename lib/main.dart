@@ -14,34 +14,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class MainScreen extends StatelessWidget {
-//   const MainScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: AnimatedButton(
-//           onPress: () {
-//             // Acción al presionar el botón
-//             print('Botón presionado');
-//           },
-//           height: 50,
-//           width: 200,
-//           text: 'Botón Animado',
-//           isReverse: true,
-//           selectedTextColor: Colors.black,
-//           transitionType: TransitionType.LEFT_TO_RIGHT,
-//           backgroundColor: Colors.cyan[900]!,
-//           borderColor: Colors.white,
-//           borderRadius: 50,
-//           borderWidth: 2,
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
@@ -77,7 +49,7 @@ class MainScreen extends StatelessWidget {
                         // Inicia la animación
                         print('Botón presionado');
                         // Espera un tiempo determinado. Por ejemplo, 500 milisegundos
-                        await Future.delayed(const Duration(milliseconds: 800));
+                        await Future.delayed(const Duration(milliseconds: 700));
                         // Después del retraso, navega a la siguiente pantalla
                         Navigator.push(
                           context,
@@ -102,7 +74,7 @@ class MainScreen extends StatelessWidget {
                         // Inicia la animación
                         print('Botón presionado');
                         // Espera un tiempo determinado. Por ejemplo, 500 milisegundos
-                        await Future.delayed(const Duration(milliseconds: 800));
+                        await Future.delayed(const Duration(milliseconds: 700));
                         // Después del retraso, navega a la siguiente pantalla
                         Navigator.push(
                           context,
