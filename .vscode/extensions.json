@@ -7,5 +7,9 @@
     "github.copilot-chat",
     "mhutchie.git-graph",
     "usernamehw.errorlens"
+  ],
+  "unwantedRecommendations": [
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github"
   ]
 }
