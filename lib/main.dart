@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:tienda_online_flutter/screens/login_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -54,7 +55,7 @@ class MainScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SecondScreen()),
+                              builder: (context) => const LoginScreen()),
                         );
                       },
                       height: 48,
