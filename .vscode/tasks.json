@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "git pull origin main",
+      "type": "shell",
+      "command": "git pull origin main",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "icon": {
+        "id": "git-fetch",
+        "color": "terminal.ansiRed"
+      }
+    }
+  ]
+}
