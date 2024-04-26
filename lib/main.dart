@@ -142,22 +142,6 @@ class _MainScreenState extends State<MainScreen>
   }
 }
 
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Second Screen"),
-      ),
-      body: const Center(
-        child: Text("¡Bienvenido a la segunda pantalla!"),
-      ),
-    );
-  }
-}
-
 class ThirdScreen extends StatelessWidget {
   const ThirdScreen({Key? key}) : super(key: key);
 
