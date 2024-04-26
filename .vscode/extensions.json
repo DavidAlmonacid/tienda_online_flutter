@@ -7,8 +7,5 @@
     "github.copilot-chat",
     "mhutchie.git-graph",
     "usernamehw.errorlens"
-  ],
-  "unwantedRecommendations": [
-    "eamodio.gitlens"
   ]
 }
