@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Hogar Total - Tienda Online',
       theme: ThemeData(fontFamily: 'RedHatDisplay'),
       home: const MainScreen(),
     );
