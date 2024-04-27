@@ -16,6 +16,15 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
+  fonts:
+    - family: RedHatDisplay
+      fonts:
+        - asset: assets/fonts/red_hat_display/red-hat-display-latin-300-normal.ttf
+        - asset: assets/fonts/red_hat_display/red-hat-display-latin-400-normal.ttf
+        - asset: assets/fonts/red_hat_display/red-hat-display-latin-500-normal.ttf
+        - asset: assets/fonts/red_hat_display/red-hat-display-latin-600-normal.ttf
+        - asset: assets/fonts/red_hat_display/red-hat-display-latin-700-normal.ttf
+
   assets:
     - assets/images/logo.png
     - assets/images/bg.png

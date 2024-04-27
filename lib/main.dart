@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainScreen(),
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'RedHatDisplay'),
+      home: const MainScreen(),
     );
   }
 }
