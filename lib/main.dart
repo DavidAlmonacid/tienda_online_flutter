@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
-import 'package:tienda_online_flutter/screens/login_screen.dart';
+import 'package:tienda_online_flutter/src/screens/login_screen.dart';
 
 void main() => runApp(const MyApp());
 
