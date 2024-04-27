@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_animated_button: ^2.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -28,4 +29,5 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/bg.png
+
   uses-material-design: true
