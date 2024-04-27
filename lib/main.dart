@@ -53,10 +53,13 @@ class _MainScreenState extends State<MainScreen>
       body: Stack(
         children: <Widget>[
           Positioned(
-            bottom: 20,
-            child: Image.asset(
-              'assets/images/bg.png',
-              fit: BoxFit.cover,
+            bottom: 40,
+            width: MediaQuery.of(context).size.width,
+            child: Center(
+              child: Image.asset(
+                'assets/images/bg.png',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Column(
