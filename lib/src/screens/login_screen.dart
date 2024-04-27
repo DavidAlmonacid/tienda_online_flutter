@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tienda_online_flutter/src/widgets/custom_form_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -8,67 +9,43 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormState>(); // For form validation
-
-  // Text editing controller variables for email and password
+  final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Iniciar sesión'), // Title for the screen
-      ),
-      body: SingleChildScrollView(
-        // Allow scrolling if content overflows
-        padding: const EdgeInsets.all(20.0),
-        child: Form(
-          key: _formKey, // Assign the form key
-          child: Column(
-            children: [
-              // Text field for email
-              TextFormField(
-                controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'Correo electrónico',
-                ),
-                validator: (value) {
-                  return null;
-
-                  // Add validation logic for email (if needed)
-                },
-              ),
-              const SizedBox(height: 20.0), // Add spacing
-
-              // Text field for password
-              TextFormField(
-                controller: _passwordController,
-                decoration: const InputDecoration(
-                  labelText: 'Contraseña',
-                ),
-                obscureText: true, // Hide password characters
-                validator: (value) {
-                  return null;
-
-                  // Add validation logic for password (if needed)
-                },
-              ),
-              const SizedBox(height: 20.0),
-
-              // Button to submit login
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Handle login logic (call equivalent of `ingresarUsuario` from Kotlin)
-                  }
-                },
-                child: const Text('Ingresar'),
-              ),
-            ],
-          ),
+    return CustomFormScreen(
+      title: 'Iniciar sesión',
+      formFields: [
+        TextFormField(
+          controller: _emailController,
+          decoration: const InputDecoration(labelText: 'Correo electrónico'),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Por favor ingrese su correo electrónico';
+            }
+            return null;
+          },
         ),
-      ),
+        TextFormField(
+          controller: _passwordController,
+          decoration: const InputDecoration(labelText: 'Contraseña'),
+          obscureText: true,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Por favor ingrese su contraseña';
+            }
+            return null;
+          },
+        ),
+      ],
+      onActionButtonPressed: () {
+        if (_formKey.currentState!.validate()) {
+          // Lógica de inicio de sesión
+        }
+      },
+      actionButtonText: 'Ingresar',
     );
   }
 }
