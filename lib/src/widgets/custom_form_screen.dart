@@ -17,22 +17,19 @@ class CustomFormScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: const Text("")),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
-        child: Form(
-          child: Column(
-            children: [
-              ...formFields,
-              const SizedBox(height: 20.0),
-              ElevatedButton(
-                onPressed: onActionButtonPressed,
-                child: Text(actionButtonText),
-              ),
-            ],
-          ),
+        child: Column(
+          children: [
+            Text(title),
+            ...formFields,
+            const SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: onActionButtonPressed,
+              child: Text(actionButtonText),
+            ),
+          ],
         ),
       ),
     );
