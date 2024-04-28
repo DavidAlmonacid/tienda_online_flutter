@@ -18,19 +18,40 @@ class CustomFormScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("")),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Text(title),
-            ...formFields,
-            const SizedBox(height: 20.0),
-            ElevatedButton(
+      body: Stack(
+        // padding: const EdgeInsets.all(20.0),
+        children: <Widget>[
+          Column(
+            children: [
+              const SizedBox(height: 60),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 120),
+              ...formFields,
+            ],
+          ),
+          Positioned(
+            bottom: 44,
+            child: ElevatedButton(
               onPressed: onActionButtonPressed,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.cyan[900],
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(
+                  fontFamily: 'RedHatDisplay',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
               child: Text(actionButtonText),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
