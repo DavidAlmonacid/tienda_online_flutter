@@ -3,6 +3,7 @@
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
+  "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "editor.wordWrapColumn": 80,
