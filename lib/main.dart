@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tienda_online_flutter/src/screens/login_screen.dart';
+import 'package:tienda_online_flutter/src/screens/signup_screen.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 
 void main() => runApp(const MyApp());
@@ -105,7 +106,7 @@ class _MainScreenState extends State<MainScreen>
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ThirdScreen(),
+                            builder: (context) => const SignUpScreen(),
                           ),
                         );
                       },
@@ -116,22 +117,6 @@ class _MainScreenState extends State<MainScreen>
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ThirdScreen extends StatelessWidget {
-  const ThirdScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Third Screen"),
-      ),
-      body: const Center(
-        child: Text("¡Bienvenido a la tercera pantalla!"),
       ),
     );
   }
