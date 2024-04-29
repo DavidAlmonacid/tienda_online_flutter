@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 
 class CustomFormScreen extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class CustomFormScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('')),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Stack(
           children: <Widget>[
             Column(
@@ -38,18 +39,10 @@ class CustomFormScreen extends StatelessWidget {
             ),
             Positioned(
               bottom: 44,
-              child: ElevatedButton(
+              width: MediaQuery.of(context).size.width - 48,
+              child: CustomAnimatedButton(
+                text: actionButtonText,
                 onPressed: onActionButtonPressed,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.cyan[900],
-                  foregroundColor: Colors.white,
-                  textStyle: const TextStyle(
-                    fontFamily: 'RedHatDisplay',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                child: Text(actionButtonText),
               ),
             ),
           ],

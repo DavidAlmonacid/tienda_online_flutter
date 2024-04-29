@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:tienda_online_flutter/src/screens/login_screen.dart';
+import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 
 void main() => runApp(const MyApp());
 
@@ -87,66 +87,28 @@ class _MainScreenState extends State<MainScreen>
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   children: <Widget>[
-                    AnimatedButton(
-                      onPress: () async {
-                        // Inicia la animación
-                        print('Botón presionado');
-                        // Espera un tiempo determinado. Por ejemplo, 500 milisegundos
-                        await Future.delayed(const Duration(milliseconds: 700));
-                        // Después del retraso, navega a la siguiente pantalla
+                    CustomAnimatedButton(
+                      text: 'Iniciar sesión',
+                      onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginScreen()),
+                            builder: (context) => const LoginScreen(),
+                          ),
                         );
                       },
-                      height: 48,
-                      width: MediaQuery.of(context).size.width - 48,
-                      text: 'Iniciar sesión',
-                      textStyle: const TextStyle(
-                        fontFamily: 'RedHatDisplay',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                      isReverse: true,
-                      selectedTextColor: Colors.black,
-                      transitionType: TransitionType.LEFT_TO_RIGHT,
-                      backgroundColor: Colors.cyan[900]!,
-                      borderColor: Colors.blueGrey[700]!,
-                      borderRadius: 50,
-                      borderWidth: 2,
                     ),
                     const SizedBox(height: 20),
-                    AnimatedButton(
-                      onPress: () async {
-                        // Inicia la animación
-                        print('Botón presionado');
-                        // Espera un tiempo determinado. Por ejemplo, 500 milisegundos
-                        await Future.delayed(const Duration(milliseconds: 700));
-                        // Después del retraso, navega a la siguiente pantalla
+                    CustomAnimatedButton(
+                      text: 'Crear cuenta',
+                      onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ThirdScreen()),
+                            builder: (context) => const ThirdScreen(),
+                          ),
                         );
                       },
-                      height: 48,
-                      width: MediaQuery.of(context).size.width - 48,
-                      text: 'Crear cuenta',
-                      textStyle: const TextStyle(
-                        fontFamily: 'RedHatDisplay',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                      isReverse: true,
-                      selectedTextColor: Colors.black,
-                      transitionType: TransitionType.RIGHT_TO_LEFT,
-                      backgroundColor: Colors.cyan[900]!,
-                      borderColor: Colors.blueGrey[700]!,
-                      borderRadius: 50,
-                      borderWidth: 2,
                     ),
                   ],
                 ),
