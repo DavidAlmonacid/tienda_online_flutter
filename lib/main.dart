@@ -84,7 +84,7 @@ class _MainScreenState extends State<MainScreen>
               ),
               const SizedBox(height: 320),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   children: <Widget>[
                     AnimatedButton(
@@ -101,9 +101,10 @@ class _MainScreenState extends State<MainScreen>
                         );
                       },
                       height: 48,
-                      width: 300,
+                      width: MediaQuery.of(context).size.width - 48,
                       text: 'Iniciar sesión',
                       textStyle: const TextStyle(
+                        fontFamily: 'RedHatDisplay',
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
@@ -131,9 +132,10 @@ class _MainScreenState extends State<MainScreen>
                         );
                       },
                       height: 48,
-                      width: 300,
+                      width: MediaQuery.of(context).size.width - 48,
                       text: 'Crear cuenta',
                       textStyle: const TextStyle(
+                        fontFamily: 'RedHatDisplay',
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
