@@ -18,26 +18,55 @@ class _LoginScreenState extends State<LoginScreen> {
     return CustomFormScreen(
       title: 'Iniciar sesión',
       formFields: [
-        TextFormField(
-          controller: _emailController,
-          decoration: const InputDecoration(labelText: 'Correo electrónico'),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Por favor ingrese su correo electrónico';
-            }
-            return null;
-          },
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey[400]!),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: TextFormField(
+            controller: _emailController,
+            decoration: InputDecoration(
+              hintText: 'Correo electrónico',
+              hintStyle: TextStyle(color: Colors.grey[400]),
+              border: InputBorder.none,
+            ),
+            style: const TextStyle(fontSize: 18),
+            keyboardType: TextInputType.emailAddress,
+            autofillHints: const [AutofillHints.email],
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Por favor ingrese su correo electrónico';
+              }
+              return null;
+            },
+          ),
         ),
-        TextFormField(
-          controller: _passwordController,
-          decoration: const InputDecoration(labelText: 'Contraseña'),
-          obscureText: true,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Por favor ingrese su contraseña';
-            }
-            return null;
-          },
+        const SizedBox(height: 40),
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey[400]!),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: TextFormField(
+            controller: _passwordController,
+            decoration: InputDecoration(
+              hintText: 'Contraseña',
+              hintStyle: TextStyle(color: Colors.grey[400]),
+              border: InputBorder.none,
+            ),
+            style: const TextStyle(fontSize: 18),
+            keyboardType: TextInputType.visiblePassword,
+            autofillHints: const [AutofillHints.password],
+            obscureText: true,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Por favor ingrese su contraseña';
+              }
+              return null;
+            },
+          ),
         ),
       ],
       onActionButtonPressed: () {
