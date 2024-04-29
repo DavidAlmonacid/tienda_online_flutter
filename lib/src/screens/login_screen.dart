@@ -19,16 +19,16 @@ class _LoginScreenState extends State<LoginScreen> {
       title: 'Iniciar sesión',
       formFields: [
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey[400]!),
+            border: Border.all(color: Colors.grey[500]!),
             borderRadius: BorderRadius.circular(8),
           ),
           child: TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
               hintText: 'Correo electrónico',
-              hintStyle: TextStyle(color: Colors.grey[400]),
+              hintStyle: TextStyle(color: Colors.grey[500]),
               border: InputBorder.none,
             ),
             style: const TextStyle(fontSize: 18),
@@ -44,16 +44,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         const SizedBox(height: 40),
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey[400]!),
+            border: Border.all(color: Colors.grey[500]!),
             borderRadius: BorderRadius.circular(8),
           ),
           child: TextFormField(
             controller: _passwordController,
             decoration: InputDecoration(
               hintText: 'Contraseña',
-              hintStyle: TextStyle(color: Colors.grey[400]),
+              hintStyle: TextStyle(color: Colors.grey[500]),
               border: InputBorder.none,
             ),
             style: const TextStyle(fontSize: 18),
