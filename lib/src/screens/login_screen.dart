@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_form_screen.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// https://firebase.google.com/docs/auth/flutter/password-auth
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
