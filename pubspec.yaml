@@ -30,5 +30,9 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/bg.png
+    - assets/images/mercado.jpg
+    - assets/images/aseo.jpg
+    - assets/images/electrodomesticos.jpg
+    - assets/images/muebles.png
 
   uses-material-design: true

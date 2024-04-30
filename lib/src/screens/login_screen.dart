@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tienda_online_flutter/src/screens/selection_categories_screen.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_form_screen.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 // https://firebase.google.com/docs/auth/flutter/password-auth
@@ -72,9 +73,13 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ],
       onActionButtonPressed: () {
-        if (_formKey.currentState!.validate()) {
-          // Lógica de inicio de sesión
-        }
+        // if (_formKey.currentState!.validate()) {}
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SelectionCategoriesScreen(),
+          ),
+        );
       },
       actionButtonText: 'Ingresar',
     );
