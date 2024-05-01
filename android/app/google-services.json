@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "851743370880",
+    "project_id": "tienda-online-flutter-52215",
+    "storage_bucket": "tienda-online-flutter-52215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851743370880:android:4fc2b67a6e7826c9788065",
+        "android_client_info": {
+          "package_name": "com.example.tienda_online_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKmjv3Vz4mzY8ooy03Hm7NPcrBKFYIsuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

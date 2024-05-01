@@ -1,9 +1,27 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tienda_online_flutter/src/screens/login_screen.dart';
 import 'package:tienda_online_flutter/src/screens/signup_screen.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 
-void main() => runApp(const MyApp());
+import 'app_state.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ApplicationState(),
+      builder: ((context, child) => const MyApp()),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,6 +32,10 @@ class MyApp extends StatelessWidget {
       title: 'Hogar Total - Tienda Online',
       theme: ThemeData(fontFamily: 'RedHatDisplay'),
       home: const MainScreen(),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignUpScreen(),
+      },
     );
   }
 }
@@ -91,24 +113,14 @@ class _MainScreenState extends State<MainScreen>
                     CustomAnimatedButton(
                       text: 'Iniciar sesión',
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/login');
                       },
                     ),
                     const SizedBox(height: 20),
                     CustomAnimatedButton(
                       text: 'Crear cuenta',
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SignUpScreen(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/signup');
                       },
                     ),
                   ],

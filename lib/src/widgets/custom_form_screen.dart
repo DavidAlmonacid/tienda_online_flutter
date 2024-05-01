@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 
 class CustomFormScreen extends StatelessWidget {
   final String title;
-  final List<Widget> formFields;
-  final VoidCallback onActionButtonPressed;
-  final String actionButtonText;
+  final Form form;
 
   const CustomFormScreen({
     super.key,
     required this.title,
-    required this.formFields,
-    required this.onActionButtonPressed,
-    required this.actionButtonText,
+    required this.form,
   });
 
   @override
@@ -21,31 +16,39 @@ class CustomFormScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Stack(
-          children: <Widget>[
-            Column(
-              children: [
-                const SizedBox(height: 60),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                  ),
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints viewportConstraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: viewportConstraints.maxHeight,
                 ),
-                const SizedBox(height: 120),
-                ...formFields,
-              ],
-            ),
-            Positioned(
-              bottom: 44,
-              width: MediaQuery.of(context).size.width - 48,
-              child: CustomAnimatedButton(
-                text: actionButtonText,
-                onPressed: onActionButtonPressed,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 60),
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 120),
+                    SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: viewportConstraints.maxHeight - 200,
+                          minWidth: viewportConstraints.maxWidth,
+                        ),
+                        child: form,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
