@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart'
     hide EmailAuthProvider, PhoneAuthProvider;
 import 'package:flutter/material.dart';
+import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_form_screen.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_snack_bar.dart';
-// https://firebase.google.com/docs/auth/flutter/password-auth
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -67,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 style: const TextStyle(fontSize: 18),
                 keyboardType: TextInputType.visiblePassword,
                 autofillHints: const [AutofillHints.newPassword],
-                // obscureText: true,
+                obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor ingrese su contraseña';
@@ -76,12 +76,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: ElevatedButton(
-                onPressed: _createAccount,
-                child: const Text('Crear cuenta'),
-              ),
+            const SizedBox(height: 80),
+            CustomAnimatedButton(
+              text: 'Crear cuenta',
+              onPressed: _createAccount,
+              isLoading: _isLoading,
             ),
           ],
         ),
@@ -90,7 +89,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   Future<void> _createAccount() async {
-    if (!_formKey.currentState!.validate()) return;
+    final bool isValid = _formKey.currentState!.validate();
+
+    if (!isValid) return;
 
     setState(() {
       _isLoading = true;
@@ -115,7 +116,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } on FirebaseAuthException catch (e) {
       String errorMessage = 'Ocurrió un error. Por favor, inténtelo de nuevo.';
 
-      if (e.code == 'weak-password') {
+      if (e.code == 'invalid-email') {
+        errorMessage = 'El correo electrónico no es válido.';
+      } else if (e.code == 'weak-password') {
         errorMessage =
             'La contraseña es demasiado débil. Asegúrese de que tenga al menos 6 caracteres.';
       } else if (e.code == 'email-already-in-use') {
@@ -125,7 +128,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       CustomSnackBar.show(context: context, message: errorMessage, error: true);
     } catch (e) {
-      print('Error: $e');
       CustomSnackBar.show(
         context: context,
         message: 'Ocurrió un error inesperado. Por favor, inténte más tarde.',
