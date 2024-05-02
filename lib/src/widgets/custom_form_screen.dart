@@ -25,7 +25,7 @@ class CustomFormScreen extends StatelessWidget {
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     const SizedBox(height: 60),
                     Text(
                       title,
