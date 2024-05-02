@@ -12,7 +12,7 @@ class CustomSnackBar {
           message,
           style: const TextStyle(fontSize: 18),
         ),
-        backgroundColor: error ? Colors.red : Colors.green,
+        backgroundColor: error ? Colors.red[800] : Colors.green[800],
       ),
     );
   }
