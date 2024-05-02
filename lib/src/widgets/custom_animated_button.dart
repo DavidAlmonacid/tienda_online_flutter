@@ -26,7 +26,7 @@ class _CustomAnimatedButtonState extends State<CustomAnimatedButton> {
       ),
       child: Stack(
         alignment: Alignment.center,
-        children: [
+        children: <Widget>[
           AnimatedButton(
             onPress: widget.isLoading
                 ? null
