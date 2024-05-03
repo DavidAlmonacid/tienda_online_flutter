@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AseoScreen extends StatelessWidget {
+  const AseoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,15 +11,15 @@ class AseoScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset('assets/images/logo.png', width: 72, height: 79.2),
-            SizedBox(height: 12),
-            Text('Productos',
+            const SizedBox(height: 12),
+            const Text('Productos',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
-            SizedBox(height: 24),
-            Text('ASEO', style: TextStyle(fontSize: 20)),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
+            const Text('ASEO', style: TextStyle(fontSize: 20)),
+            const SizedBox(height: 24),
             productCard(
                 'assets/images/Aseo/detergente.jpeg', 'Detergente', '20.000'),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             productCard('assets/images/Aseo/cepillo.jpg', 'Cepillo', '10.000'),
           ],
         ),
@@ -30,19 +32,19 @@ class AseoScreen extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Image.asset(imagePath, width: 203, height: 134, fit: BoxFit.fill),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(productName, style: TextStyle(fontSize: 16)),
-              Text('\$ $price', style: TextStyle(fontSize: 16)),
+              Text(productName, style: const TextStyle(fontSize: 16)),
+              Text('\$ $price', style: const TextStyle(fontSize: 16)),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {},
             // color: Theme.of(context).primaryColor,
-            child: Text('Comprar'),
+            child: const Text('Comprar'),
           ),
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SelectionCategoriesScreen extends StatefulWidget {
   const SelectionCategoriesScreen({super.key});
@@ -25,9 +25,11 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
                 children: <Widget>[
                   Image.asset('assets/images/logo.png', width: 60, height: 66),
                   ElevatedButton(
-                    onPressed: () {
-                      // _auth.signOut();
-                      Navigator.pushReplacementNamed(context, '/main');
+                    onPressed: () async {
+                      await FirebaseAuth.instance.signOut();
+
+                      // Return to the main screen
+                      Navigator.pushReplacementNamed(context, '/');
                     },
                     child: const Text('Cerrar sesión'),
                   ),
@@ -41,7 +43,7 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
                 crossAxisCount: 2,
                 children: <Widget>[
                   _buildCategoryItem(
-                      'Aseo', 'assets/images/aseo.jpg', '/main1'),
+                      'Aseo', 'assets/images/aseo.jpg', '/products_aseo'),
                   _buildCategoryItem('Electrodomesticos',
                       'assets/images/electrodomesticos.jpg', '/main6'),
                   _buildCategoryItem(

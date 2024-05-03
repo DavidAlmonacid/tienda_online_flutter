@@ -47,6 +47,4 @@ flutter:
     - assets/images/Mercado/arroz.jpg
     - assets/images/Mercado/uvas.jpeg
 
-
-
   uses-material-design: true

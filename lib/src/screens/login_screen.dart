@@ -3,7 +3,6 @@ import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_form_screen.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide PhoneAuthProvider;
-// https://firebase.google.com/docs/auth/flutter/password-auth
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -107,10 +106,11 @@ class _LoginScreenState extends State<LoginScreen> {
     } on FirebaseAuthException catch (e) {
       String errorMessage = 'Ocurrió un error. Por favor, inténtelo de nuevo.';
 
-      if (e.code == 'user-not-found') {
-        errorMessage = 'No se encontro un usuario con ese correo electrónico';
-      } else if (e.code == 'wrong-password') {
-        errorMessage = 'Contraseña incorrecta';
+      if (e.code == 'invalid-email') {
+        errorMessage = 'El correo electrónico no es válido.';
+      } else if (e.code == 'invalid-credential') {
+        errorMessage =
+            'Credenciales inválidas. Ingrese un correo electrónico y contraseña válidos.';
       }
 
       CustomSnackBar.show(context: context, message: errorMessage, error: true);
