@@ -2,10 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tienda_online_flutter/src/screens/login_screen.dart';
+import 'package:tienda_online_flutter/src/screens/products_eletrodomesticos.dart';
 import 'package:tienda_online_flutter/src/screens/selection_categories_screen.dart';
 import 'package:tienda_online_flutter/src/screens/signup_screen.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 import 'package:tienda_online_flutter/src/screens/products_aseo.dart';
+import 'package:tienda_online_flutter/src/screens/products_mercado.dart';
+import 'package:tienda_online_flutter/src/screens/products_muebles.dart';
 import 'app_state.dart';
 import 'firebase_options.dart';
 
@@ -38,6 +41,9 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => const SignUpScreen(),
         '/categories': (context) => const SelectionCategoriesScreen(),
         '/products_aseo': (context) => AseoScreen(),
+        '/products_eletrodomesticos': (context) => ElectodomesticosScreen(),
+        '/products_mercado': (context) => MercadoScreen(),
+        '/products_muebles': (context) => MueblesScreen(),
       },
     );
   }

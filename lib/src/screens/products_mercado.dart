@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AseoScreen extends StatelessWidget {
+class MercadoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,12 +13,11 @@ class AseoScreen extends StatelessWidget {
             Text('Productos',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
             SizedBox(height: 24),
-            Text('ASEO', style: TextStyle(fontSize: 20)),
+            Text('MERCADO', style: TextStyle(fontSize: 20)),
             SizedBox(height: 24),
-            productCard(
-                'assets/images/Aseo/detergente.jpeg', 'Detergente', '20.000'),
+            productCard('assets/images/Mercado/arroz.jpg', 'Arroz', '3.000'),
             SizedBox(height: 24),
-            productCard('assets/images/Aseo/cepillo.jpg', 'Cepillo', '10.000'),
+            productCard('assets/images/Mercado/uvas.jpeg', 'Uvas', '5.000'),
           ],
         ),
       ),

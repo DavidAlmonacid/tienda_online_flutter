@@ -38,5 +38,15 @@ flutter:
     - assets/images/aseo.jpg
     - assets/images/electrodomesticos.jpg
     - assets/images/muebles.png
+    - assets/images/Aseo/detergente.jpeg
+    - assets/images/Aseo/cepillo.jpg
+    - assets/images/Electrodomesticos/lava.jpg
+    - assets/images/Electrodomesticos/nevera.jpg
+    - assets/images/Muebles/escritorio.jpg
+    - assets/images/Muebles/sofa.jpg
+    - assets/images/Mercado/arroz.jpg
+    - assets/images/Mercado/uvas.jpeg
+
+
 
   uses-material-design: true
