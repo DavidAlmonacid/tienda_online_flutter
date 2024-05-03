@@ -44,12 +44,14 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
                 children: <Widget>[
                   _buildCategoryItem(
                       'Aseo', 'assets/images/aseo.jpg', '/products_aseo'),
-                  _buildCategoryItem('Electrodomesticos',
-                      'assets/images/electrodomesticos.jpg', '/main6'),
                   _buildCategoryItem(
-                      'Muebles', 'assets/images/muebles.png', '/main7'),
-                  _buildCategoryItem(
-                      'Mercado', 'assets/images/mercado.jpg', '/main8'),
+                      'Electrodomesticos',
+                      'assets/images/electrodomesticos.jpg',
+                      '/products_eletrodomesticos'),
+                  _buildCategoryItem('Muebles', 'assets/images/muebles.png',
+                      '/products_muebles'),
+                  _buildCategoryItem('Mercado', 'assets/images/mercado.jpg',
+                      '/products_mercado'),
                 ],
               ),
             ),
