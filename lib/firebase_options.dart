@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -59,4 +56,14 @@ class DefaultFirebaseOptions {
     projectId: 'tienda-online-flutter-52215',
     storageBucket: 'tienda-online-flutter-52215.appspot.com',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAdp0HO6zBC661ETWw5Dnj7Kk1ZdMSs_Ww',
+    appId: '1:851743370880:web:693dbcdc7f201e33788065',
+    messagingSenderId: '851743370880',
+    projectId: 'tienda-online-flutter-52215',
+    authDomain: 'tienda-online-flutter-52215.firebaseapp.com',
+    storageBucket: 'tienda-online-flutter-52215.appspot.com',
+  );
+
 }
