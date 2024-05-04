@@ -40,10 +40,10 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignUpScreen(),
         '/categories': (context) => const SelectionCategoriesScreen(),
-        '/products_aseo': (context) => AseoScreen(),
-        '/products_eletrodomesticos': (context) => ElectodomesticosScreen(),
-        '/products_mercado': (context) => MercadoScreen(),
-        '/products_muebles': (context) => MueblesScreen(),
+        '/products_aseo': (context) => const AseoScreen(),
+        '/products_eletrodomesticos': (context) => const ElectodomesticosScreen(),
+        '/products_mercado': (context) => const MercadoScreen(),
+        '/products_muebles': (context) => const MueblesScreen(),
       },
     );
   }
