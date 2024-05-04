@@ -6,11 +6,19 @@ class AseoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Image.asset(
+            'assets/images/logo.png',
+            width: 50,
+            height: 55,
+          ),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/images/logo.png', width: 72, height: 79.2),
             const SizedBox(height: 12),
             const Text('Productos',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
