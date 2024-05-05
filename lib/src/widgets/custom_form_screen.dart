@@ -14,42 +14,19 @@ class CustomFormScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('')),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints viewportConstraints) {
-            return SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minHeight: viewportConstraints.maxHeight,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const SizedBox(height: 60),
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox(height: 120),
-                    SingleChildScrollView(
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(
-                          minHeight: viewportConstraints.maxHeight - 200,
-                          minWidth: viewportConstraints.maxWidth,
-                        ),
-                        child: form,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
+      body: Column(
+        children: <Widget>[
+          const SizedBox(height: 60),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: form,
+            ),
+          ),
+        ],
       ),
     );
   }
