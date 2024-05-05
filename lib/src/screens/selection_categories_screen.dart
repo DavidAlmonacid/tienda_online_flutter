@@ -46,10 +46,10 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
               'Selecciona una categoría',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 40),
             Expanded(
               child: ListView(
                 children: <Widget>[
+                  const SizedBox(height: 40),
                   _buildCategoryItem(
                     'Aseo',
                     'assets/images/aseo.jpg',
