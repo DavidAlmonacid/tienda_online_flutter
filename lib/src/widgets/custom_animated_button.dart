@@ -21,9 +21,7 @@ class _CustomAnimatedButtonState extends State<CustomAnimatedButton> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(
-        maxWidth: 400,
-      ),
+      constraints: const BoxConstraints(maxWidth: 400),
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
