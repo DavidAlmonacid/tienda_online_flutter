@@ -7,35 +7,53 @@ class AseoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: Image.asset(
             'assets/images/logo.png',
             width: 50,
             height: 55,
           ),
         ),
+        centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const SizedBox(height: 12),
-            const Text('Productos',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
-            const SizedBox(height: 24),
-            const Text('ASEO', style: TextStyle(fontSize: 20)),
-            const SizedBox(height: 24),
-            productCard(
-                'assets/images/Aseo/detergente.jpeg', 'Detergente', '20.000'),
-            const SizedBox(height: 24),
-            productCard('assets/images/Aseo/cepillo.jpg', 'Cepillo', '10.000'),
-          ],
-        ),
+      body: Column(
+        children: <Widget>[
+          const SizedBox(height: 32),
+          const Text(
+            'Productos',
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+          ),
+          const SizedBox(height: 24),
+          const Padding(
+            padding: EdgeInsets.only(left: 24),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'ASEO',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          _productCard(
+            'assets/images/Aseo/detergente.jpeg',
+            'Detergente',
+            '20.000',
+          ),
+          const SizedBox(height: 24),
+          _productCard(
+            'assets/images/Aseo/cepillo.jpg',
+            'Cepillo',
+            '10.000',
+          ),
+        ],
       ),
+      // ),
     );
   }
 
-  Widget productCard(String imagePath, String productName, String price) {
+  Widget _productCard(String imagePath, String productName, String price) {
     return Card(
       child: Column(
         children: <Widget>[
@@ -51,7 +69,6 @@ class AseoScreen extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {},
-            // color: Theme.of(context).primaryColor,
             child: const Text('Comprar'),
           ),
         ],
