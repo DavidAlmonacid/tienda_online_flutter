@@ -22,64 +22,75 @@ class _LoginScreenState extends State<LoginScreen> {
       title: 'Iniciar sesión',
       form: Form(
         key: _formKey,
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey[500]!),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: TextFormField(
-                controller: _emailController,
-                decoration: InputDecoration(
-                  hintText: 'Correo electrónico',
-                  hintStyle: TextStyle(color: Colors.grey[500]),
-                  border: InputBorder.none,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: Column(
+              children: <Widget>[
+                const SizedBox(height: 120),
+                Container(
+                  width: MediaQuery.of(context).size.width - 48,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey[500]!),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: TextFormField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      hintText: 'Correo electrónico',
+                      hintStyle: TextStyle(color: Colors.grey[500]),
+                      border: InputBorder.none,
+                    ),
+                    style: const TextStyle(fontSize: 18),
+                    keyboardType: TextInputType.emailAddress,
+                    autofillHints: const [AutofillHints.email],
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor ingrese su correo electrónico';
+                      }
+                      return null;
+                    },
+                  ),
                 ),
-                style: const TextStyle(fontSize: 18),
-                keyboardType: TextInputType.emailAddress,
-                autofillHints: const [AutofillHints.email],
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor ingrese su correo electrónico';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            const SizedBox(height: 40),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey[500]!),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: TextFormField(
-                controller: _passwordController,
-                decoration: InputDecoration(
-                  hintText: 'Contraseña',
-                  hintStyle: TextStyle(color: Colors.grey[500]),
-                  border: InputBorder.none,
+                const SizedBox(height: 40),
+                Container(
+                  width: MediaQuery.of(context).size.width - 48,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey[500]!),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      hintText: 'Contraseña',
+                      hintStyle: TextStyle(color: Colors.grey[500]),
+                      border: InputBorder.none,
+                    ),
+                    style: const TextStyle(fontSize: 18),
+                    keyboardType: TextInputType.visiblePassword,
+                    autofillHints: const [AutofillHints.password],
+                    obscureText: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor ingrese su contraseña';
+                      }
+                      return null;
+                    },
+                  ),
                 ),
-                style: const TextStyle(fontSize: 18),
-                keyboardType: TextInputType.visiblePassword,
-                autofillHints: const [AutofillHints.password],
-                obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor ingrese su contraseña';
-                  }
-                  return null;
-                },
-              ),
+                const SizedBox(height: 80),
+                CustomAnimatedButton(
+                  text: 'Ingresar',
+                  onPressed: _signin,
+                ),
+                const SizedBox(height: 40),
+              ],
             ),
-            const SizedBox(height: 80),
-            CustomAnimatedButton(
-              text: 'Ingresar',
-              onPressed: _signin,
-            ),
-          ],
+          ),
         ),
       ),
     );
