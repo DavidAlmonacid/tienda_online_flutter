@@ -92,7 +92,7 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
           margin: const EdgeInsets.symmetric(horizontal: 24),
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.grey[300],
+            color: Colors.grey[200],
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
