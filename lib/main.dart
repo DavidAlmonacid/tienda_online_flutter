@@ -35,13 +35,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hogar Total - Tienda Online',
       theme: ThemeData(fontFamily: 'RedHatDisplay'),
-      home: const MainScreen(),
+      home: Consumer<ApplicationState>(
+        builder: (context, appState, child) {
+          if (appState.loggedIn) {
+            return const SelectionCategoriesScreen();
+          } else {
+            return const MainScreen();
+          }
+        },
+      ),
       routes: {
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignUpScreen(),
         '/categories': (context) => const SelectionCategoriesScreen(),
         '/products_aseo': (context) => const AseoScreen(),
-        '/products_eletrodomesticos': (context) => const ElectodomesticosScreen(),
+        '/products_eletrodomesticos': (context) =>
+            const ElectodomesticosScreen(),
         '/products_mercado': (context) => const MercadoScreen(),
         '/products_muebles': (context) => const MueblesScreen(),
       },
