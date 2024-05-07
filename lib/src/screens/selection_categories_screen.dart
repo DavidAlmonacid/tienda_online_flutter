@@ -86,24 +86,21 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
   Widget _buildCategoryItem(String title, String imagePath, String routeName) {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, routeName),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 200),
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 24),
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            children: <Widget>[
-              Image.asset(imagePath, width: 172, height: 154, fit: BoxFit.fill),
-              Text(
-                title,
-                style: const TextStyle(fontSize: 18),
-              ),
-            ],
-          ),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          children: <Widget>[
+            Image.asset(imagePath, width: 172, height: 154, fit: BoxFit.fill),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 18),
+            ),
+          ],
         ),
       ),
     );
