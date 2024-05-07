@@ -37,7 +37,7 @@ class CustomProductScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                category[0].toUpperCase() + category.substring(1),
+                category.toUpperCase(),
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
