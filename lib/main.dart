@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         '/categories': (context) => const SelectionCategoriesScreen(),
         '/products_aseo': (context) => const AseoScreen(),
         '/products_eletrodomesticos': (context) =>
-            const ElectodomesticosScreen(),
+            const ElectrodomesticosScreen(),
         '/products_mercado': (context) => const MercadoScreen(),
         '/products_muebles': (context) => const MueblesScreen(),
       },

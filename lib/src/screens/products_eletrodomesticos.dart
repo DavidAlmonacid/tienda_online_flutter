@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ElectodomesticosScreen extends StatelessWidget {
-  const ElectodomesticosScreen({super.key});
+class ElectrodomesticosScreen extends StatelessWidget {
+  const ElectrodomesticosScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
