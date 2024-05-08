@@ -52,25 +52,25 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
                   const SizedBox(height: 40),
                   _buildCategoryItem(
                     'Aseo',
-                    'assets/images/aseo.jpg',
+                    'assets/images/aseo.png',
                     '/products_aseo',
                   ),
                   const SizedBox(height: 20),
                   _buildCategoryItem(
                     'Electrodomésticos',
-                    'assets/images/electrodomesticos.jpg',
+                    'assets/images/electrodomesticos.png',
                     '/products_eletrodomesticos',
                   ),
                   const SizedBox(height: 20),
                   _buildCategoryItem(
                     'Muebles',
-                    'assets/images/muebles.png',
+                    'assets/images/muebles.jpg',
                     '/products_muebles',
                   ),
                   const SizedBox(height: 20),
                   _buildCategoryItem(
                     'Mercado',
-                    'assets/images/mercado.jpg',
+                    'assets/images/mercado.png',
                     '/products_mercado',
                   ),
                   const SizedBox(height: 40),
@@ -95,10 +95,18 @@ class _SelectionCategoriesScreenState extends State<SelectionCategoriesScreen> {
         ),
         child: Column(
           children: <Widget>[
-            Image.asset(imagePath, width: 172, height: 154, fit: BoxFit.fill),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: Image.asset(
+                imagePath,
+                width: 180,
+                height: 180,
+                fit: BoxFit.cover,
+              ),
+            ),
             Text(
               title,
-              style: const TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
           ],
         ),
