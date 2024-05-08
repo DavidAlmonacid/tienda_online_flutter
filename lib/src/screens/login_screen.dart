@@ -15,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomAnimatedButton(
                   text: 'Ingresar',
                   onPressed: _signin,
+                  isLoading: _isLoading,
                 ),
                 const SizedBox(height: 40),
               ],
@@ -101,9 +103,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (!isValid) return;
 
-    //setState(() {
-    //   _isLoading = true;
-    //});
+    setState(() {
+      _isLoading = true;
+    });
+
     try {
       final userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
@@ -131,11 +134,10 @@ class _LoginScreenState extends State<LoginScreen> {
         message: 'Ocurrió un error inesperado. Por favor, inténte más tarde.',
         error: true,
       );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
-    //finally {
-    //setState(() {
-    // _isLoading = false;
-    //});
-    //}
   }
 }
