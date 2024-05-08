@@ -12,15 +12,15 @@ class ElectrodomesticosScreen extends StatelessWidget {
       cards: <Widget>[
         SizedBox(height: 12),
         CustomProductCard(
-          imagePath: 'assets/images/Electrodomesticos/lava.jpg',
+          imagePath: 'assets/images/Electrodomesticos/lavadora.png',
           productName: 'Lavadora',
           price: '800.000',
         ),
         SizedBox(height: 24),
         CustomProductCard(
-          imagePath: 'assets/images/Electrodomesticos/nevera.jpg',
+          imagePath: 'assets/images/Electrodomesticos/nevera.png',
           productName: 'Nevera',
-          price: '1.500.000',
+          price: '2.500.000',
         ),
         SizedBox(height: 40),
       ],

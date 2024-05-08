@@ -38,13 +38,13 @@ flutter:
     - assets/images/aseo.png
     - assets/images/electrodomesticos.png
     - assets/images/muebles.jpg
-    - assets/images/Aseo/detergente.jpeg
-    - assets/images/Aseo/cepillo.jpg
-    - assets/images/Electrodomesticos/lava.jpg
-    - assets/images/Electrodomesticos/nevera.jpg
-    - assets/images/Muebles/escritorio.jpg
-    - assets/images/Muebles/sofa.jpg
-    - assets/images/Mercado/arroz.jpg
-    - assets/images/Mercado/uvas.jpeg
+    - assets/images/Aseo/detergente.png
+    - assets/images/Aseo/cepillo.png
+    - assets/images/Electrodomesticos/lavadora.png
+    - assets/images/Electrodomesticos/nevera.png
+    - assets/images/Muebles/escritorio.png
+    - assets/images/Muebles/sofa.png
+    - assets/images/Mercado/arroz.png
+    - assets/images/Mercado/uvas.png
 
   uses-material-design: true

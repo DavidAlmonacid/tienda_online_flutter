@@ -12,13 +12,13 @@ class AseoScreen extends StatelessWidget {
       cards: <Widget>[
         SizedBox(height: 12),
         CustomProductCard(
-          imagePath: 'assets/images/Aseo/detergente.jpeg',
+          imagePath: 'assets/images/Aseo/detergente.png',
           productName: 'Detergente',
           price: '20.000',
         ),
         SizedBox(height: 24),
         CustomProductCard(
-          imagePath: 'assets/images/Aseo/cepillo.jpg',
+          imagePath: 'assets/images/Aseo/cepillo.png',
           productName: 'Cepillo',
           price: '10.000',
         ),

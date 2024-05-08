@@ -12,13 +12,13 @@ class MueblesScreen extends StatelessWidget {
       cards: <Widget>[
         SizedBox(height: 12),
         CustomProductCard(
-          imagePath: 'assets/images/Muebles/sofa.jpg',
+          imagePath: 'assets/images/Muebles/sofa.png',
           productName: 'Sofá',
           price: '600.000',
         ),
         SizedBox(height: 24),
         CustomProductCard(
-          imagePath: 'assets/images/Muebles/escritorio.jpg',
+          imagePath: 'assets/images/Muebles/escritorio.png',
           productName: 'Escritorio',
           price: '400.000',
         ),
