@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tienda_online_flutter/src/widgets/custom_snack_bar.dart';
 
 class CustomProductCard extends StatelessWidget {
   final String imagePath;
@@ -45,46 +44,26 @@ class CustomProductCard extends StatelessWidget {
           CustomAnimatedButton(
             text: 'Comprar',
             onPressed: () {
-              _comprarProducto(productName, double.parse(price));
+              final database = FirebaseFirestore.instance;
+              final product = {'nombre': productName, 'precio': price};
+
+              database.collection('compras').add(product).then((value) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Compra exitosa'),
+                  ),
+                );
+              }).catchError((e) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Error al comprar'),
+                  ),
+                );
+              });
             },
           ),
         ],
       ),
     );
   }
-
-  // Create a function "_comprarProducto" that receives two parameters: a name of type string and a price of type double.
-  // help me create the function in the following line
-  void _comprarProducto(String name, double price) {
-    final db = FirebaseFirestore.instance;
-
-    final producto = <String, dynamic>{
-      'nombre': name,
-      'precio': price,
-      'fecha': DateTime.now(),
-    };
-
-    /*
-    db.collection("compras")
-            .add(producto)
-            .addOnSuccessListener { documentReference ->
-                // Manejar el éxito del envío de datos si es necesario
-                Funciones.mostrarAlerta("Su compra de $nombre fue exitosa", this)
-            }
-            .addOnFailureListener { e ->
-                // Manejar el error si ocurre
-                Funciones.mostrarAlerta("Error al comprar el $nombre", this)
-            }
-    */
-    // Help me to create the code to add the product to the "compras" collection in Firestore, and translate the commented Kotlin code to Dart.
-
-    db.collection('compras').add(producto).then((DocumentReference doc) {
-      // Manejar el éxito del envío de datos si es necesario
-      CustomSnackBar.show(context: context, message: 'Su compra de $name fue exitosa',);
-    }).catchError((error) {
-      // Manejar el error si ocurre
-      CustomSnackBar.show(context: context, message: 'Error al comprar el $name', error: true,);
-    });
-  }
-
 }
