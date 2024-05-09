@@ -44,7 +44,9 @@ class CustomProductCard extends StatelessWidget {
           const SizedBox(height: 24),
           CustomAnimatedButton(
             text: 'Comprar',
-            onPressed: _comprarProducto(productName, double.parse(price)),
+            onPressed: () {
+              _comprarProducto(productName, double.parse(price));
+            },
           ),
         ],
       ),
