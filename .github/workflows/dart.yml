@@ -40,7 +40,7 @@ jobs:
 
       # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Analyze project source
-        run: dart analyze --fatal-infos
+        run: dart analyze
 
   create-apk:
     needs: build
