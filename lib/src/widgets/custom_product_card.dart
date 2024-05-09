@@ -83,7 +83,7 @@ class CustomProductCard extends StatelessWidget {
       CustomSnackBar.show(context: context, message: 'Su compra de $name fue exitosa',);
     }).catchError((error) {
       // Manejar el error si ocurre
-      CustomSnackBar.show(context: context, message: 'Error al comprar el $name');
+      CustomSnackBar.show(context: context, message: 'Error al comprar el $name', error: true,);
     });
   }
 
