@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tienda_online_flutter/src/widgets/custom_snack_bar.dart';
 
 class CustomProductCard extends StatelessWidget {
   final String imagePath;
@@ -77,10 +78,10 @@ class CustomProductCard extends StatelessWidget {
 
     db.collection('compras').add(producto).then((DocumentReference doc) {
       // Manejar el éxito del envío de datos si es necesario
-      print('Su compra de $name fue exitosa');
+      CustomSnackBar.show(context: context, message: 'Su compra de $name fue exitosa',);
     }).catchError((error) {
       // Manejar el error si ocurre
-      print('Error al comprar el $name');
+      CustomSnackBar.show(context: context, message: 'Error al comprar el $name');
     });
   }
 
