@@ -14,13 +14,13 @@ class MercadoScreen extends StatelessWidget {
         CustomProductCard(
           imagePath: 'assets/images/Mercado/arroz.png',
           productName: 'Arroz',
-          price: '3.000',
+          price: 3000,
         ),
         SizedBox(height: 24),
         CustomProductCard(
           imagePath: 'assets/images/Mercado/uvas.png',
           productName: 'Uvas',
-          price: '5.000',
+          price: 5000,
         ),
         SizedBox(height: 40),
       ],

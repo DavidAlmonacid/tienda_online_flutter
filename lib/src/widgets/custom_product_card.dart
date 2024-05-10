@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CustomProductCard extends StatelessWidget {
   final String imagePath;
   final String productName;
-  final String price;
+  final int price;
 
   const CustomProductCard({
     super.key,
@@ -32,7 +33,12 @@ class CustomProductCard extends StatelessWidget {
             children: <Widget>[
               Text(productName, style: const TextStyle(fontSize: 18)),
               Text(
-                '\$ $price',
+                NumberFormat.currency(
+                  locale: 'es_CO',
+                  decimalDigits: 0,
+                  symbol: '\$',
+                  customPattern: '\u00A4 ###,##0',
+                ).format(price),
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
