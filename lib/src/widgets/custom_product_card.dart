@@ -1,7 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tienda_online_flutter/src/widgets/custom_animated_button.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tienda_online_flutter/src/widgets/custom_snack_bar.dart';
 
 class CustomProductCard extends StatelessWidget {
   final String imagePath;
@@ -51,19 +52,22 @@ class CustomProductCard extends StatelessWidget {
             text: 'Comprar',
             onPressed: () {
               final database = FirebaseFirestore.instance;
-              final product = {'nombre': productName, 'precio': price};
+
+              final product = <String, dynamic>{
+                'nombre': productName,
+                'precio': price
+              };
 
               database.collection('compras').add(product).then((value) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Compra exitosa'),
-                  ),
+                CustomSnackBar.show(
+                  context: context,
+                  message: 'Su compra de "$productName" fue exitosa',
                 );
               }).catchError((e) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Error al comprar'),
-                  ),
+                CustomSnackBar.show(
+                  context: context,
+                  message: 'Error al realizar la compra',
+                  error: true,
                 );
               });
             },
